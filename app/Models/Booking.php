@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-    $timestamps = false;
+    public $timestamps = false;
 
-    $primaryKey = 'booking_id';
+    protected $primaryKey = 'booking_id';
 
     /**
      * The attributes that are mass assignable.
@@ -24,8 +24,13 @@ class Booking extends Model
         'fare'
     ];
 
-    protected $dates = [
-        'created_at_local'
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'created_at_local' => 'datetime',
     ];
 
     public function driver()

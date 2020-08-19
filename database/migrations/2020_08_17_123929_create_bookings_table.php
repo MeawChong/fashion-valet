@@ -15,7 +15,7 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id('booking_id');
-            $table->timestamp('created_at_local');
+            $table->timestamp('created_at_local')->nullable();
             $table->integer('driver_id')->unsigned();
             $table->integer('passenger_id')->unsigned();
             $table->string('state');
